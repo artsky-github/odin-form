@@ -1,11 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Skranji&display=swap");
+
 :root {
   --system-font: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --logo-font: "Skranji", serif;
+  --color-invert: black;
+  color: white;
 }
 
 body {
   font-family: var(--system-font);
   display: flex;
+}
+
+em {
+  font-style: italic;
 }
 
 .hero-img {
@@ -15,19 +24,27 @@ body {
   width: 30vw;
 }
 
-.hero-img > div {
-  position: relative;
-  top: 10%;
+.hero-logo {
+  margin-top: 10vh;
   width: 100%;
   height: 125px;
-  background-color: black;
-  opacity: 60%;
+  background-color: rgb(0, 0, 0, 50%);
   display: flex;
   justify-content: center;
+  gap: 20px;
   align-items: center;
 }
 
 h1 {
+  font-family: var(--logo-font, --system-font);
+  font-size: 5em;
+}
+
+.hero-footer {
+  text-align: center;
+}
+
+.hero-footer > p > a {
   color: white;
 }
 
@@ -37,6 +54,14 @@ h1 {
   background: linear-gradient(
     270deg,
     rgb(37, 77, 54) 0%,
-    rgb(95, 192, 137) 100%
+    rgb(73, 148, 105) 100%
   );
+}
+
+.form-bdy {
+  height: 100px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 10px black;
+  color: var(--color-invert);
 }
