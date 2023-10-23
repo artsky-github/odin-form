@@ -5,6 +5,7 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --logo-font: "Skranji", serif;
   --color-invert: black;
+  --form-padding: 30px;
   color: white;
 }
 
@@ -17,9 +18,15 @@ em {
   font-style: italic;
 }
 
+p {
+  font-size: 14pt;
+  margin-block: var(--form-block-margin);
+}
+
 .hero-img {
   background-image: url(images/pine-bg.jpg);
   background-size: cover;
+  position: relative;
   height: 100vh;
   width: 30vw;
 }
@@ -35,12 +42,25 @@ em {
   align-items: center;
 }
 
-h1 {
+h1,
+h2 {
   font-family: var(--logo-font, --system-font);
+}
+
+h1 {
   font-size: 5em;
+}
+h2 {
+  font-size: 2em;
 }
 
 .hero-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+}
+
+.hero-footer > p {
   text-align: center;
 }
 
@@ -49,6 +69,9 @@ h1 {
 }
 
 .form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   height: 100vh;
   width: 70vw;
   background: linear-gradient(
@@ -58,10 +81,19 @@ h1 {
   );
 }
 
+.form-hdr {
+  padding-inline: var(--form-padding);
+}
+
 .form-bdy {
   height: 100px;
   width: 100%;
+  padding: var(--form-padding);
   background-color: white;
-  box-shadow: 0px 0px 10px black;
+  box-shadow: 0px 1px 5px black;
   color: var(--color-invert);
+}
+
+.form-ftr {
+  padding-inline: var(--form-padding);
 }
