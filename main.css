@@ -5,8 +5,43 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --logo-font: "Skranji", serif;
   --color-invert: black;
-  --form-padding: 30px;
+  --form-font: 14pt;
+  --form-spacing: 30px;
+  --light-brown: rgb(196, 164, 132);
   color: white;
+}
+
+@media screen and (max-width: 750px) {
+  body {
+    flex-direction: column;
+  }
+
+  body > div {
+    min-width: 100vw !important;
+  }
+
+  .hero-img {
+    min-height: 0 !important;
+  }
+
+  .hero-logo {
+    margin-top: 10% !important;
+    margin-bottom: 10% !important;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .form-container {
+    text-align: center;
+  }
+  .form-signup {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-ftr {
+    align-items: center;
+  }
 }
 
 body {
@@ -19,20 +54,23 @@ em {
 }
 
 p {
-  font-size: 14pt;
-  margin-block: var(--form-block-margin);
+  font-size: var(--form-font);
+}
+
+a {
+  color: var(--light-brown);
 }
 
 .hero-img {
   background-image: url(images/pine-bg.jpg);
   background-size: cover;
   position: relative;
-  height: 100vh;
-  width: 30vw;
+  min-height: 100vh;
+  width: 40vw;
 }
 
 .hero-logo {
-  margin-top: 10vh;
+  margin-top: 100px;
   width: 100%;
   height: 125px;
   background-color: rgb(0, 0, 0, 50%);
@@ -64,16 +102,12 @@ h2 {
   text-align: center;
 }
 
-.hero-footer > p > a {
-  color: white;
-}
-
 .form-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
-  width: 70vw;
+  min-height: 100vh;
+  width: 60vw;
   background: linear-gradient(
     270deg,
     rgb(37, 77, 54) 0%,
@@ -82,18 +116,70 @@ h2 {
 }
 
 .form-hdr {
-  padding-inline: var(--form-padding);
+  padding: var(--form-spacing);
+  display: flex;
+  flex-direction: column;
+  gap: var(--form-spacing);
 }
 
 .form-bdy {
-  height: 100px;
-  width: 100%;
-  padding: var(--form-padding);
+  border-width: 100%;
+  padding: var(--form-spacing);
   background-color: white;
   box-shadow: 0px 1px 5px black;
   color: var(--color-invert);
 }
 
+.form-signup {
+  margin-top: var(--form-spacing);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 700px;
+}
+
+.form-signup label {
+  display: block;
+  color: gray;
+  font-size: 10pt;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.form-signup span {
+  color: red;
+}
+
+.form-signup div {
+  width: 300px;
+}
+
+.form-signup div > input {
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 12pt;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
 .form-ftr {
-  padding-inline: var(--form-padding);
+  padding: var(--form-spacing);
+  display: flex;
+  flex-direction: column;
+  gap: var(--form-spacing);
+}
+
+.form-ftr > button {
+  padding: 10px;
+  border: none;
+  width: 250px;
+  padding-inline: 50px;
+  font-size: var(--form-font);
+  letter-spacing: -1px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgb(0, 0, 0);
 }
