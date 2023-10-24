@@ -174,12 +174,22 @@ h2 {
 .form-ftr > button {
   padding: 10px;
   border: none;
-  width: 250px;
-  padding-inline: 50px;
+  width: fit-content;
+  padding-inline: 30px;
   font-size: var(--form-font);
   letter-spacing: -1px;
   font-weight: bold;
   background-color: white;
   border-radius: 10px;
   box-shadow: 1px 1px 5px rgb(0, 0, 0);
+  transition: 0.1s;
+}
+
+.form-ftr > button:hover {
+  cursor: pointer;
+}
+
+.form-ftr > button:active {
+  transform: scale(0.95);
+  box-shadow: none;
 }
